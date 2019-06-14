@@ -10,7 +10,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/Home',
       name: 'Home',
       component: HomePage
     },
@@ -29,7 +29,5 @@ export default new Router({
       name: 'Contact',
       component: ContactPage
     },
-    
-    
   ]
 })
