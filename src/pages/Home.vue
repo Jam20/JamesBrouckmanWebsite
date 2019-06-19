@@ -1,29 +1,35 @@
 <template>
     <div id="HomePage">
-        <img id="BackgroundImgOne" src="https://via.placeholder.com/1920x750"/>
-        <div id="Title">
-            <h1>James Brouckman</h1>
-            <div id="line"/>
-            <h2>Computer Engineering Student</h2>
+        <div id="SectionOne">
+            <img id="BackgroundImgOne" src="https://via.placeholder.com/1920x1080"/>
+            <div id="Title">
+                <h1>James Brouckman</h1>
+                <div id="line"/>
+                <h2>Computer Engineering Student</h2>
+            </div>
         </div>
-        <textBlurb class="InfoBlurb" :height="300" :width="250" text="Hello World"></textBlurb>
-
+        <div id="SectionTwo">
+            <div id="ProjectsTitle">
+                <h1>Recent Projects</h1>
+            </div>
+        </div>
     </div>
 </template>
 <script>
 import TextBlurb from "../components/TextBlurb"
 
 export default {
-
     components: {
         TextBlurb
     }    
 }
 </script>
 <style scoped>
+    @import url("../Variables.css");
     #HomePage{
         position: absolute;
         top: 0%;
+         font-family: -'Segoe UI';
     }
     .InfoBlurb{
         position: absolute;
@@ -34,8 +40,7 @@ export default {
         position: absolute;
         top: 40%;
         left:20%;
-        font-family: -'Segoe UI';
-        color: white;
+        color: var(--ForgroundPrimary);
     }
     #Title h1{
         font-size: 45pt;
@@ -44,6 +49,13 @@ export default {
     #line{
         width:100%;
         height: 3px;
-        background-color: white;
+        background-color: var(--ForgroundPrimary);
+    } 
+    #ProjectsTitle h1{
+        text-align: center;
+        width: 100%;
+        font-size: 25pt;
+        color: var(--ForgroundPrimary);
     }
+
 </style>

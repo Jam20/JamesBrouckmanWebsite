@@ -7,8 +7,6 @@
 <script>
 export default {
     
-
-    
     props: {
         height: {
             type: Number,
