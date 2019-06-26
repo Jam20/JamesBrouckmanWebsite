@@ -1,7 +1,7 @@
 <template>
     <div id="HomePage">
         <div id="SectionOne">
-            <img id="BackgroundImgOne" src="https://via.placeholder.com/1920x1080"/>
+            <img id="BackgroundImgOne" src="https://via.placeholder.com/1500x1080"/>
             <div id="Title">
                 <h1>James Brouckman</h1>
                 <div id="line"/>
@@ -58,4 +58,7 @@ export default {
         color: var(--ForgroundPrimary);
     }
 
+    #backgroundImgOne{
+        width: 100%;
+    }
 </style>

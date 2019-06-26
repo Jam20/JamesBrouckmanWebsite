@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div id="pageView">
+      <router-view/>
+    </div>
     <div id="Navbar">
       <router-link id="HomeLink" v-bind:class="{Hover:link1Hover, NoHover:!link1Hover}" @mouseenter.native="link1Hover=true" @mouseleave.native="link1Hover = false" to="Home">Home</router-link>
       <router-link id="AboutLink" v-bind:class="{Hover:link2Hover, NoHover:!link2Hover}" @mouseenter.native="link2Hover=true" @mouseleave.native="link2Hover = false" to="About">About</router-link>
@@ -23,7 +25,6 @@ export default {
       link2Hover: false,
       link3Hover: false,
       link4Hover: false,
-
     }
   }
  
@@ -80,6 +81,10 @@ a.NoHover{
   background-color: var(--BackgroundPrimary);
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
+}
+
+#pageView{
+  width: 100%;
 }
 
 
