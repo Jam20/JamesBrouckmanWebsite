@@ -39,6 +39,9 @@ body{
   background-color: var(--BackgroundPrimary);
   margin:0 !important;
 }
+#pageView{
+  width: 100%
+}
 
 #Navbar{
   display: flex;

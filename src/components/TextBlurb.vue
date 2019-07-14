@@ -1,5 +1,5 @@
 <template>
-    <div id="BlurbBorder" :style="BoxStyle">
+    <div class="BlurbBorder" :style="BoxStyle">
         <p>{{text}}</p>
     </div>
 </template>
@@ -9,11 +9,11 @@ export default {
     
     props: {
         height: {
-            type: Number,
+            type: String,
             required: true,
         },
         width: {
-            type: Number,
+            type: String,
             required: true,
         },
         title: {
@@ -45,11 +45,13 @@ export default {
 </script>
 
 <style scoped>
-    #BlurbBorder{
-        border-radius: 20%
+    .BlurbBorder{
+        border-radius: 25%;
+        vertical-align: center;
     }
-    #BlurbBorder p{
-        margin-bottom: 2%;
-        margin-left: 5%
+    .BlurbBorder p{
+        vertical-align: center;
+        margin-bottom: 10%;
+        margin-left: 10%
     } 
 </style>

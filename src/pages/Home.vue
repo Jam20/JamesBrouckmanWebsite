@@ -31,6 +31,7 @@ export default {
     @import url("../Variables.css");
     #HomePage{
         position: absolute;
+        width: 100%;
         top: 0%;
          font-family: -'Segoe UI';
     }
@@ -41,8 +42,8 @@ export default {
     }
     #Title{
         position: absolute;
-        top: 40%;
-        left:20%;
+        top: 35%;
+        left:15%;
         color: var(--ForgroundPrimary);
     }
     #Title h1{
