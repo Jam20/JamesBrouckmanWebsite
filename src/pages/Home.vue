@@ -12,15 +12,18 @@
             <div id="ProjectsTitle">
                 <h1>Recent Projects</h1>
             </div>
+            <ExpandableList/>
+            
         </div>
     </div>
 </template>
 <script>
 import TextBlurb from "../components/TextBlurb"
-
+import ExpandableList from "../components/ExpandableList"
 export default {
     components: {
-        TextBlurb
+        TextBlurb,
+        ExpandableList
     }    
 }
 </script>
