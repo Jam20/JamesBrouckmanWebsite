@@ -12,7 +12,7 @@
             <div id="ProjectsTitle">
                 <h1>Recent Projects</h1>
             </div>
-            <ExpandableList/>
+            <ExpandableList :inputData="githubData"/>
             
         </div>
     </div>
@@ -24,7 +24,25 @@ export default {
     components: {
         TextBlurb,
         ExpandableList
-    }    
+    },
+    data() {return{
+        githubData:[{"name":"loading1"},{"name":"loading2"},{"name":"loading3"},{"name":"loading4"},{"name":"loading5"},{"name":"loading6"}]
+
+    }},
+    
+    created: function(){
+        fetch("https://api.github.com/users/Jam20/repos")
+        .then(response => {
+            return response.json()
+            }).then(json => {
+                json.sort(function(a,b){
+                    var c = new Date(a.updated_at);
+                    var d = new Date(b.updated_at);
+                    return d-c;
+                })
+                //this.githubData = json;
+                })
+    },
 }
 </script>
 <style scoped>

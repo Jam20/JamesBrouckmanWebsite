@@ -1,14 +1,15 @@
 <template>
     <div id="root">
-        <div class="arrow arrow--left" id="leftArrow">
+        <div id="padding" v-if="!isLessData"/>
+        <div class="arrow arrow--left" id="leftArrow" v-if="isLessData" @click="decrement">
             <span></span>
         </div>
         <div id="blurbs">
-        <TextBlurb id="blurbOne" height=300 width=300 :text="repos[0].name"/>
-        <TextBlurb id="blurbTwo" height=300 width=300 :text="repos[1].name"/>
-        <TextBlurb id="blurbThree" height=300 width=300 :text="repos[2].name"/>
+            <TextBlurb class="blurbOne" height=300 width=300 :text="inputData[index].name" @click.native="blurbOneClicked" :class="{blurbOneEnl:blurbOneActive, blurbFade:blurbTwoActive, blurbFade:blurbThreeActive}"/>
+            <TextBlurb class="blurbTwo" height=300 width=300 :text="inputData[index+1].name" @click="blurbTwoClicked" :class="{blurbTwoEnl:blurbTwoActive, blurbFade:blurbOneActive, blurbFade:blurbThreeActive}"/>
+            <TextBlurb class="blurbThree" height=300 width=300 :text="inputData[index+2].name" @click="blurbThreeClicked" :class="{blurbThreeEnl:blurbThreeActive, blurbFade:blurbTwoActive, blurbFade:blurbOneActive}"/>
         </div>
-        <div class="arrow arrow--right" id="rightArrow">
+        <div class="arrow arrow--right" id="rightArrow" v-if="isMoreData"  @click="incrment">
             <span></span>
         </div>
     </div>
@@ -23,31 +24,47 @@ export default {
     components: {
         TextBlurb,
     },
-    data() {return {
-        repos: [{"name":"loading"}],
-        rightArrowHover: false,
-        
-    }},
-    created: function(){
-        fetch("https://api.github.com/users/Jam20/repos")
-        .then(response => {
-            return response.json()
-            }).then(json => {
-                json.sort(function(a,b){
-                    var c = new Date(a.updated_at);
-                    var d = new Date(b.updated_at);
-                    return d-c;
-                })
-                this.repos = json;
-                })
+    props:{
+        inputData: Array
     },
+    data() {return {
+        index: 0,
+        blurbOneActive: false,
+        blurbTwoActive: false,
+        blurbThreeActive: false,
+    }},
+    
     methods:{
-        
+        incrment:function(){
+            this.index++;
+        },
+        decrement:function(){
+            this.index--;
+        },
+
+        blurbOneClicked(){
+            console.log("clicked");
+            this.blurbOneActive = true;
+        },
+        blurbTwoClicked(){
+            this.blurbTwoActive = true;
+
+        },
+        blurbThreeClicked(){
+            this.blurbThreeActive = true;
+
+        },
     },
     
     computed:{
        
-     
+       isMoreData: function(){
+           return this.index+2<this.inputData.length-1
+       },
+
+       isLessData: function(){
+           return this.index!=0
+       }
     }
     
 
@@ -65,21 +82,95 @@ export default {
 
     }
     #blurbs{
-        display: flex;
-        flex-grow: 0;
-        width: 80%;
-        justify-content: space-around;
-        
+        position: relative;
+        width: 70%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
-    #blurbOne{
-        flex-grow: 0
+    .blurbOne{
+        position: absolute;
+        left:0%;
+    }
+    .blurbTwo{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0)
+    }
+    .blurbThree{
+        position: absolute;
+        left: 100%;
+        transform: translate(-100%,0)
     }
     #leftArrow{
-        margin-left: 8%
+        margin-left: 8.2%
     }
-    #rightArrow{
+    #padding{
+        padding-left: 10%
+    }
 
+    .blurbFade{
+        animation-name: fadeOut;
+        animation-duration: 150ms;
     }
+
+    .blurbOneEnl{
+        width:100%;
+        animation-name: blurbOneEnlarge;
+        animation-delay: 100ms;
+        animation-duration: 200ms;
+    }
+    
+    .blurbTwoEnl{
+        animation-name: blurbTwoEnlarge;
+        animation-delay: 100ms;
+        animation-duration: 200ms;
+    }
+    
+    .blurbThreeEnl{
+        animation-name: blurbThreeEnlarge;
+        animation-delay: 100ms;
+        animation-duration: 200ms;
+    }
+
+    @keyframes fadeOut{
+        0%{
+            width:300px;
+            opacity: 1;
+        }
+        100%{
+            opacity:0%;
+        }
+    }
+    @keyframes blurbOneEnlarge{
+        0%{
+            left: 0%;
+        }
+        50%{
+            left:50%;
+            transform:translate(-50%,0);
+        }
+        100%{
+            width: 100%;
+        }
+    }
+    @keyframes blurbeTwoEnlarge{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity:0%;
+        }
+    }
+    @keyframes blurbThreeEnlarge{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity:0%;
+        }
+    }
+
+
     .arrow {
         flex-grow: 0;
         padding-top: 175px;
