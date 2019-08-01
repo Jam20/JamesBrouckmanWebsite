@@ -4,14 +4,23 @@
         <div class="arrow arrow--left" id="leftArrow" v-if="isLessData" @click="decrement">
             <span></span>
         </div>
-        <div id="blurbs">
-            <TextBlurb class="blurbOne" height=300 width=300 :text="inputData[index].name" @click.native="blurbOneClicked" :class="{blurbOneEnl:blurbOneActive, blurbFade:blurbTwoActive, blurbFade:blurbThreeActive}"/>
-            <TextBlurb class="blurbTwo" height=300 width=300 :text="inputData[index+1].name" @click="blurbTwoClicked" :class="{blurbTwoEnl:blurbTwoActive, blurbFade:blurbOneActive, blurbFade:blurbThreeActive}"/>
-            <TextBlurb class="blurbThree" height=300 width=300 :text="inputData[index+2].name" @click="blurbThreeClicked" :class="{blurbThreeEnl:blurbThreeActive, blurbFade:blurbTwoActive, blurbFade:blurbOneActive}"/>
+        <div id="listBox">
+            <div class="itemOne">
+                <slot class="itemOne" :itemData="itemOneData"/>
+            </div>
+            <div class="itemTwo">
+                <slot class="itemTwo" :itemData="itemTwoData"/>
+            </div>
+            <div class="itemThree">
+                <slot class="itemThree" :itemData="itemThreeData"/>
+            </div>
+
+          
         </div>
         <div class="arrow arrow--right" id="rightArrow" v-if="isMoreData"  @click="incrment">
             <span></span>
         </div>
+        <div id="padding" v-if="!isMoreData"/>
     </div>
 </template>
 
@@ -25,13 +34,11 @@ export default {
         TextBlurb,
     },
     props:{
-        inputData: Array
+        inputData: Array,
     },
     data() {return {
         index: 0,
-        blurbOneActive: false,
-        blurbTwoActive: false,
-        blurbThreeActive: false,
+
     }},
     
     methods:{
@@ -40,19 +47,6 @@ export default {
         },
         decrement:function(){
             this.index--;
-        },
-
-        blurbOneClicked(){
-            console.log("clicked");
-            this.blurbOneActive = true;
-        },
-        blurbTwoClicked(){
-            this.blurbTwoActive = true;
-
-        },
-        blurbThreeClicked(){
-            this.blurbThreeActive = true;
-
         },
     },
     
@@ -64,7 +58,19 @@ export default {
 
        isLessData: function(){
            return this.index!=0
-       }
+       },
+
+       itemOneData: function(){
+           return this.inputData[this.index];
+       },
+       itemTwoData: function(){
+           return this.inputData[this.index+1];
+       },
+       itemThreeData: function(){
+           return this.inputData[this.index+2];
+       },
+
+
     }
     
 
@@ -78,96 +84,35 @@ export default {
     #root{
         display:flex;
         width: 100%;
-        
-
     }
-    #blurbs{
+    #listBox{
         position: relative;
-        width: 70%;
+        width: 100%;
         margin-left: 5%;
         margin-right: 5%;
     }
-    .blurbOne{
+    .itemOne{
         position: absolute;
         left:0%;
     }
-    .blurbTwo{
+    .itemTwo{
         position: absolute;
         left: 50%;
         transform: translate(-50%,0)
     }
-    .blurbThree{
+    .itemThree{
         position: absolute;
         left: 100%;
         transform: translate(-100%,0)
     }
     #leftArrow{
-        margin-left: 8.2%
+        margin-left: 3%
+    }
+    #rightArrow{
+        margin-right: 3%
     }
     #padding{
-        padding-left: 10%
-    }
-
-    .blurbFade{
-        animation-name: fadeOut;
-        animation-duration: 150ms;
-    }
-
-    .blurbOneEnl{
-        width:100%;
-        animation-name: blurbOneEnlarge;
-        animation-delay: 100ms;
-        animation-duration: 200ms;
-    }
-    
-    .blurbTwoEnl{
-        animation-name: blurbTwoEnlarge;
-        animation-delay: 100ms;
-        animation-duration: 200ms;
-    }
-    
-    .blurbThreeEnl{
-        animation-name: blurbThreeEnlarge;
-        animation-delay: 100ms;
-        animation-duration: 200ms;
-    }
-
-    @keyframes fadeOut{
-        0%{
-            width:300px;
-            opacity: 1;
-        }
-        100%{
-            opacity:0%;
-        }
-    }
-    @keyframes blurbOneEnlarge{
-        0%{
-            left: 0%;
-        }
-        50%{
-            left:50%;
-            transform:translate(-50%,0);
-        }
-        100%{
-            width: 100%;
-        }
-    }
-    @keyframes blurbeTwoEnlarge{
-        0%{
-            opacity: 1;
-        }
-        100%{
-            opacity:0%;
-        }
-    }
-    @keyframes blurbThreeEnlarge{
-        0%{
-            opacity: 1;
-        }
-        100%{
-            opacity:0%;
-        }
+        width: 106.5px;
     }
 
 
