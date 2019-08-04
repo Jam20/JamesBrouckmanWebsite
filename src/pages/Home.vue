@@ -13,7 +13,7 @@
                 <h1>Recent Projects</h1>
             </div>
             <ExpandableList :inputData="githubData" v-slot:="slotProps">
-                <div class="ProjectListItem">
+                <div class="ProjectListItem" :style="{backgroundImage: 'url(' + require('../assets/projectImages/' + slotProps.itemData.name + '.jpg') + ')'}">
                     <div id="ProjectListItemTitle">
                         {{splitCamelCase(slotProps.itemData.name.replace(new RegExp('-','g')," "))}}
                     </div>
@@ -33,6 +33,8 @@
 <script>
 import TextBlurb from "../components/TextBlurb"
 import ExpandableList from "../components/ExpandableList"
+
+
 export default {
     components: {
         TextBlurb,
@@ -40,7 +42,7 @@ export default {
     },
     data() {return{
         githubData:[{"name":"loading1"},{"name":"loading2"},{"name":"loading3"},{"name":"loading4"},{"name":"loading5"},{"name":"loading6"}],
-        
+        readmeArray: []
     }},
     
     created: function(){
@@ -53,8 +55,11 @@ export default {
                     var d = new Date(b.updated_at);
                     return d-c;
                 })
+                
                 this.githubData = json;
-                })
+                
+                });
+        
     },
 
     computed: {
@@ -93,7 +98,7 @@ export default {
         position: absolute;
         width: 100%;
         top: 0%;
-         font-family: -'Segoe UI';
+        font-family: -'Segoe UI';
     }
     .InfoBlurb{
         position: absolute;
@@ -145,6 +150,10 @@ export default {
         background-color: white;
         border-radius: 25%;
         vertical-align: center;
+        background-size: 350px 350px;
+        background-color: red;
+        background-blend-mode: luminosity;
+        background-position: center;
     }
 
     #ProjectListItemTitle{
@@ -170,5 +179,6 @@ export default {
         transform: translate(-50%,0);
         width: fit-content;
     }
+    
 
 </style>

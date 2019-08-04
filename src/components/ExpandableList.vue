@@ -41,6 +41,7 @@ export default {
 
     }},
     
+    
     methods:{
         incrment:function(){
             this.index++;
@@ -53,7 +54,7 @@ export default {
     computed:{
        
        isMoreData: function(){
-           return this.index+2<this.inputData.length-1
+            return this.index+2<this.inputData.length-1
        },
 
        isLessData: function(){
