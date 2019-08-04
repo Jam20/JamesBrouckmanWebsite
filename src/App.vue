@@ -6,9 +6,7 @@
     <div id="Navbar">
       <router-link id="HomeLink" v-bind:class="{Hover:link1Hover, NoHover:!link1Hover}" @mouseenter.native="link1Hover=true" @mouseleave.native="link1Hover = false" to="Home">Home</router-link>
       <router-link id="AboutLink" v-bind:class="{Hover:link2Hover, NoHover:!link2Hover}" @mouseenter.native="link2Hover=true" @mouseleave.native="link2Hover = false" to="About">About</router-link>
-      <div id="imgCircleBorder">
-      <img id="imgCircle" src="./assets/Logo.png"/>
-      </div>
+
       <router-link id="ProjectsLink" v-bind:class="{Hover:link3Hover, NoHover:!link3Hover}" @mouseenter.native="link3Hover=true" @mouseleave.native="link3Hover = false" to="Projects">Projects</router-link>
       <router-link id="ContactLink" v-bind:class="{Hover:link4Hover, NoHover:!link4Hover}" @mouseenter.native="link4Hover=true" @mouseleave.native="link4Hover = false" to="Contact">Contact</router-link>
     </div>
@@ -65,7 +63,7 @@ a.Hover{
 }
 a.NoHover{
   color: var(--ForgroundPrimary);
-  background-color: var(--BackgroundPrimary);
+  
 }
 
 #imgCircle{

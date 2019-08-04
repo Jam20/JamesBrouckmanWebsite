@@ -1,7 +1,7 @@
 <template>
     <div id="HomePage">
         <div id="SectionOne">
-            <img id="BackgroundImgOne" src="https://via.placeholder.com/1500x1080"/>
+            <img id="BackgroundImgOne" src="../assets/BackgroundOne.jpg"/>
             <div id="Title">
                 <h1>James Brouckman</h1>
                 <div id="line"/>
@@ -107,13 +107,16 @@ export default {
     }
     #Title{
         position: absolute;
-        top: 35%;
-        left:15%;
-        color: var(--ForgroundPrimary);
+        top: 45%;
+        left:12.5%;
+        color: var(--ForgroundPrimary)
     }
     #Title h1{
-        font-size: 45pt;
+        font-size: 3vw;
         margin-bottom: 2%;
+    }
+    #Title h2{
+        font-size: 1.5vw;
     }
     #line{
         width:100%;
@@ -140,8 +143,10 @@ export default {
         transform: translate(-50%,0);
         width:fit-content;
     }
-    #backgroundImgOne{
+    #BackgroundImgOne{
+        max-height:100vh;
         width: 100%;
+        filter: brightness(80%)
     }
 
     .ProjectListItem{
@@ -151,8 +156,6 @@ export default {
         border-radius: 25%;
         vertical-align: center;
         background-size: 350px 350px;
-        background-color: red;
-        background-blend-mode: luminosity;
         background-position: center;
     }
 
