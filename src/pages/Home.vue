@@ -100,16 +100,16 @@ export default {
         top: 0%;
         font-family: -'Segoe UI';
     }
-    .InfoBlurb{
-        position: absolute;
-        top:20%;
-        right:20%;
+    #BackgroundImgOne{
+        max-height:100vh;
+        width: 100%;
+        filter: brightness(60%)
     }
     #Title{
         position: absolute;
         top: 45%;
         left:12.5%;
-        color: var(--ForgroundPrimary)
+        color: white;
     }
     #Title h1{
         font-size: 3vw;
@@ -121,7 +121,7 @@ export default {
     #line{
         width:100%;
         height: 3px;
-        background-color: var(--ForgroundPrimary);
+        background-color: white;
     } 
     #line2{
         position: relative;
@@ -142,13 +142,7 @@ export default {
         left:50%;
         transform: translate(-50%,0);
         width:fit-content;
-    }
-    #BackgroundImgOne{
-        max-height:100vh;
-        width: 100%;
-        filter: brightness(80%)
-    }
-
+    } 
     .ProjectListItem{
         width: 300px;
         height: 300px;
@@ -158,7 +152,6 @@ export default {
         background-size: 350px 350px;
         background-position: center;
     }
-
     #ProjectListItemTitle{
         position:relative;
         top: 20%;

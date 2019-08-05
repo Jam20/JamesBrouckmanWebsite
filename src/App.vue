@@ -4,11 +4,10 @@
       <router-view/>
     </div>
     <div id="Navbar">
-      <router-link id="HomeLink" v-bind:class="{Hover:link1Hover, NoHover:!link1Hover}" @mouseenter.native="link1Hover=true" @mouseleave.native="link1Hover = false" to="Home">Home</router-link>
-      <router-link id="AboutLink" v-bind:class="{Hover:link2Hover, NoHover:!link2Hover}" @mouseenter.native="link2Hover=true" @mouseleave.native="link2Hover = false" to="About">About</router-link>
-
-      <router-link id="ProjectsLink" v-bind:class="{Hover:link3Hover, NoHover:!link3Hover}" @mouseenter.native="link3Hover=true" @mouseleave.native="link3Hover = false" to="Projects">Projects</router-link>
-      <router-link id="ContactLink" v-bind:class="{Hover:link4Hover, NoHover:!link4Hover}" @mouseenter.native="link4Hover=true" @mouseleave.native="link4Hover = false" to="Contact">Contact</router-link>
+      <router-link class="NavbarLink"  id="HomeLink"     to="Home">    Home    </router-link>
+      <router-link class="NavbarLink"  id="AboutLink"    to="About">   About   </router-link>
+      <router-link class="NavbarLink"  id="ProjectsLink" to="Projects">Projects</router-link>
+      <router-link class="NavbarLink"  id="ContactLink"  to="Contact"> Contact </router-link>
     </div>
     
   </div>
@@ -19,10 +18,6 @@ export default {
   name: 'App',
   data(){
     return{
-      link1Hover: false,
-      link2Hover: false,
-      link3Hover: false,
-      link4Hover: false,
     }
   }
  
@@ -36,6 +31,7 @@ export default {
 body{
   background-color: var(--BackgroundPrimary);
   margin:0 !important;
+  font-family: 'Titillium Web', sans-serif;
 }
 #pageView{
   width: 100%
@@ -47,45 +43,34 @@ body{
   width:100%;
 }
 #Navbar a{
-  
-  font-size: 25pt;
+  font-size: 1.75vw;
   text-decoration: none;
   position: relative;
   flex-grow: 1;
   text-align: center;
-  height:30pt;
+  color: white;
 
 }
 
-a.Hover{
-  background-color: #1f4f4f;
-  color: var(--ForgroundNeutral);
-}
-a.NoHover{
-  color: var(--ForgroundPrimary);
-  
-}
 
-#imgCircle{
-  height: 100px;
-  border-radius: 50%;
-  margin: 25px;
-  margin-top: .1%;
-  vertical-align:middle;
-  position: relative;
-  left: 0%;
-
+#Navbar a::after{
+  content: '';
+  position: absolute;
+  width: 25%;
+  height:2px;
+  bottom: 0;
+  left: 37.5%;
+  background-color: white;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-#imgCircleBorder{
-  height: 5%;
-  background-color: var(--BackgroundPrimary);
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-}
-
-#pageView{
-  width: 100%;
+#Navbar a:hover::after{
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 
