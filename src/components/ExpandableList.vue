@@ -111,7 +111,7 @@ export default {
         margin-right: 3%
     }
     #padding{
-        width: 106.5px;
+        width: 10vh
     }
 
 
