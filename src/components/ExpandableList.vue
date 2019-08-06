@@ -26,13 +26,10 @@
 
 
 <script>
-import TextBlurb from "../components/TextBlurb"
 
 
 export default {
-    components: {
-        TextBlurb,
-    },
+
     props:{
         inputData: Array,
     },
@@ -85,6 +82,7 @@ export default {
     #root{
         display:flex;
         width: 100%;
+        background: transparent;
     }
     #listBox{
         position: relative;

@@ -29,7 +29,7 @@ export default {
 @import url("Variables.css");
 
 body{
-  background-color: var(--BackgroundPrimary);
+  background-color: #2a2b2a;
   margin:0 !important;
   font-family: 'Titillium Web', sans-serif;
 }
@@ -51,7 +51,6 @@ body{
   color: white;
 
 }
-
 
 #Navbar a::after{
   content: '';

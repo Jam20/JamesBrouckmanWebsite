@@ -26,18 +26,15 @@
                      </div>
                 </div>
             </ExpandableList>
-            
         </div>
     </div>
 </template>
 <script>
-import TextBlurb from "../components/TextBlurb"
 import ExpandableList from "../components/ExpandableList"
 
 
 export default {
     components: {
-        TextBlurb,
         ExpandableList
     },
     data() {return{
@@ -105,9 +102,24 @@ export default {
         width: 100%;
         filter: brightness(60%)
     }
+    #SectionOne{
+        position: relative;
+        top:0%;
+        left:0%;
+    }
+    #SectionTwo{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-image: url("../assets/homepageProjectsBackground.jpg");
+        background-size: 100%;
+        background-position: bottom;
+        width:100%;
+        height:50vh
+    }
     #Title{
         position: absolute;
-        top: 45%;
+        top: 40%;
         left:12.5%;
         color: white;
     }
@@ -137,20 +149,21 @@ export default {
     }
     #ProjectsTitle h1{
         position: relative;
-        font-size: 25pt;
-        color: var(--ForgroundPrimary);
+        font-size: 2vw;
+        color: white;
         left:50%;
         transform: translate(-50%,0);
         width:fit-content;
     } 
     .ProjectListItem{
-        width: 300px;
-        height: 300px;
+        width: 15vw;
+        height: 15vw;
         background-color: white;
         border-radius: 25%;
         vertical-align: center;
-        background-size: 350px 350px;
+        background-size: 20vw 20vw;
         background-position: center;
+        position:relative;
     }
     #ProjectListItemTitle{
         position:relative;
@@ -158,7 +171,7 @@ export default {
         left:50%;
         transform: translate(-50%,0);
         width: fit-content;
-        font-size: 20px;
+        font-size: 1vw;
     }
     #ProjectListItemLanguage{
         position: relative;
@@ -166,14 +179,16 @@ export default {
         left: 50%;
         transform: translate(-50%,0);
         width: fit-content;
+        font-size: .9vw;
 
     }
     #ProjectListItemUpdateDate{
-        position: relative;
-        top:79%;
+        position: absolute;
+        top:92.5%;
         left: 50%;
         transform: translate(-50%,0);
         width: fit-content;
+        font-size: .75vw;
     }
     
 
