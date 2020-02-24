@@ -9,12 +9,25 @@
       <router-link class="NavbarLink"  id="ProjectsLink" to="Projects">Projects</router-link>
       <router-link class="NavbarLink"  id="ContactLink"  to="Contact"> Contact </router-link>
     </div>
-    
+    <Home id="HomePage"></Home>
+    <About id="AboutPage"></About>
+    <Projects id="ProjectsPage"></Projects>
+    <Contact id="ContactPage"></Contact>    
   </div>
 </template>
-
 <script>
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Projects from "./pages/Projects"
+import Contact from "./pages/Contact"
+
 export default {
+  components: {
+    Home,
+    About,
+    Contact,
+    Projects
+  },
   name: 'App',
   data(){
     return{
@@ -36,10 +49,10 @@ body{
 #pageView{
   width: 100%
 }
-
 #Navbar{
   display: flex;
   position: absolute;
+  z-index: 2;
   width:100%;
 }
 #Navbar a{
@@ -51,7 +64,6 @@ body{
   color: white;
 
 }
-
 #Navbar a::after{
   content: '';
   position: absolute;
@@ -72,5 +84,13 @@ body{
   transform: scaleX(1);
 }
 
+#HomePage{
+  position: relative;
+  width: 100%;
+  top: 0%;
+}
+#AboutPage{
+  position: relative;
+  top: -6.4px;}
 
 </style>
