@@ -42,7 +42,7 @@ export default {
 @import url("Variables.css");
 
 body{
-  background-color: #2a2b2a;
+  background-color: #d8d8d8; /*#3a3b3a;*/
   margin:0 !important;
   font-family: 'Titillium Web', sans-serif;
 }

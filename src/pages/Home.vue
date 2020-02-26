@@ -1,6 +1,6 @@
 <template>
     <div id="HomePage">
-       <img id="BackgroundImgOne" src="../assets/BackgroundOne.jpg"/>
+       <img id="BackgroundImgOne" src="../assets/AboutBackground.jpg"/>
             <div id="Title">
                 <h1>James Brouckman</h1>
                 <div id="line"/>
@@ -28,7 +28,7 @@ export default {
     #BackgroundImgOne{
         max-height:100vh;
         width: 100%;
-        filter: brightness(60%)
+        filter: brightness(100%)
     }
     #Title{
         position: absolute;
