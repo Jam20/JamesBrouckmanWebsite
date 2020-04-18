@@ -1,4 +1,4 @@
-<template>
+    <template>
     <div id="HomePage">
        <img id="BackgroundImgOne" src="../assets/AboutBackground.jpg"/>
             <div id="Title">
@@ -9,12 +9,10 @@
     </div>
 </template>
 <script>
-import ExpandableList from "../components/ExpandableList"
 
 
 export default {
     components: {
-        ExpandableList
     },
 }
 </script>

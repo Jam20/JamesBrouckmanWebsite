@@ -4,25 +4,27 @@
       <router-view/>
     </div>
     <div id="Navbar">
-      <router-link class="NavbarLink"  id="HomeLink"     to="Home">    Home    </router-link>
-      <router-link class="NavbarLink"  id="AboutLink"    to="About">   About   </router-link>
-      <router-link class="NavbarLink"  id="ProjectsLink" to="Projects">Projects</router-link>
-      <router-link class="NavbarLink"  id="ContactLink"  to="Contact"> Contact </router-link>
+      <anchor-router-link class="NavbarLink"  id="HomeLink"     :to="{name: 'HomePage', hash: '#HomePage'}"        >   Home     </anchor-router-link>
+      <anchor-router-link class="NavbarLink"  id="AboutLink"    :to="{name: 'AboutPage', hash: '#AboutPage'}"      >   About    </anchor-router-link>
+      <anchor-router-link class="NavbarLink"  id="ProjectsLink" :to="{name: 'ProjectsPage', hash: '#ProjectsPage'}">   Projects </anchor-router-link>
+      <anchor-router-link class="NavbarLink"  id="ContactLink"  :to="{name: 'ContactPage', hash: '#ContactPage'}" >   Contact  </anchor-router-link>
     </div>
-    <Home id="HomePage"></Home>
-    <About id="AboutPage"></About>
+    <Home     id="HomePage"    ></Home>
+    <About    id="AboutPage"   ></About>
     <Projects id="ProjectsPage"></Projects>
-    <Contact id="ContactPage"></Contact>    
+    <Contact  id="ContactPage" ></Contact>
   </div>
 </template>
 <script>
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Projects from "./pages/Projects"
-import Contact from "./pages/Contact"
+import AnchorRouterLink from "vue-anchor-router-link";
+import Home             from "./pages/Home"
+import About            from "./pages/About"
+import Projects         from "./pages/Projects"
+import Contact          from "./pages/Contact"
 
 export default {
   components: {
+    AnchorRouterLink,
     Home,
     About,
     Contact,
@@ -51,7 +53,7 @@ body{
 }
 #Navbar{
   display: flex;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   width:100%;
 }

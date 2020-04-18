@@ -1,18 +1,15 @@
 <template>
     <div id="About">
-        <div id="IntroSection">
-            <div class="sectionTitle">
-                <h1>About Me</h1>
-            </div> 
-        </div>
-
+    
         <div id="SkillsSection">
             <div class="sectionTitle">
+                <h2>Skills</h2>
             </div> 
         </div>
         
         <div id="ExperienceSection">
             <div class="sectionTitle">
+                <h2>Experience</h2>
             </div> 
         </div>
         
@@ -46,11 +43,11 @@ export default {
     }
 
     .sectionTitle{
-        position: absolute;
+        position: relative;
         top:5%;
         left: 42vw;
     }
-    .sectionTitle h1{
+    .sectionTitle h2{
         font-size: 3vw;
         color: black;
     }
