@@ -4,7 +4,9 @@
         <div id="SkillsSection">
             <div class="sectionTitle">
                 <h2>Skills</h2>
+                 
             </div> 
+            <SelectionViewOption title="Test" imageURL="codeBackground"/>
         </div>
         
         <div id="ExperienceSection">
@@ -25,10 +27,13 @@
     
     </div>
 </template>
-
 <script>
+import SelectionViewOption from "../components/SelectionViewOption"
+
 export default {
-    
+    components: {
+        SelectionViewOption
+    }
 }
 </script>
 
@@ -50,6 +55,9 @@ export default {
     .sectionTitle h2{
         font-size: 3vw;
         color: black;
+    }
+    #SkillsSection{
+        width: 100%;
     }
 
 </style>

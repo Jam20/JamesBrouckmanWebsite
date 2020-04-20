@@ -1,6 +1,6 @@
     <template>
     <div id="HomePage">
-       <img id="BackgroundImgOne" src="../assets/AboutBackground.jpg"/>
+       <img id="BackgroundImgOne" src="../assets/HomepageBackground.jpg"/>
             <div id="Title">
                 <h1>James Brouckman</h1>
                 <div id="line"/>

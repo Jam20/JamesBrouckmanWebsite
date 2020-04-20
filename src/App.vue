@@ -4,10 +4,10 @@
       <router-view/>
     </div>
     <div id="Navbar">
-      <anchor-router-link class="NavbarLink"  id="HomeLink"     :to="{name: 'HomePage', hash: '#HomePage'}"        >   Home     </anchor-router-link>
-      <anchor-router-link class="NavbarLink"  id="AboutLink"    :to="{name: 'AboutPage', hash: '#AboutPage'}"      >   About    </anchor-router-link>
-      <anchor-router-link class="NavbarLink"  id="ProjectsLink" :to="{name: 'ProjectsPage', hash: '#ProjectsPage'}">   Projects </anchor-router-link>
-      <anchor-router-link class="NavbarLink"  id="ContactLink"  :to="{name: 'ContactPage', hash: '#ContactPage'}" >   Contact  </anchor-router-link>
+      <anchor-router-link class="NavbarLink"  id="HomeLink"     :to="{name: 'HomePage', hash: '#HomePage'}" :scrollOptions="scrollOptions"        >   Home     </anchor-router-link>
+      <anchor-router-link class="NavbarLink"  id="AboutLink"    :to="{name: 'AboutPage', hash: '#AboutPage'}" :scrollOptions="scrollOptions"      >   About    </anchor-router-link>
+      <anchor-router-link class="NavbarLink"  id="ProjectsLink" :to="{name: 'ProjectsPage', hash: '#ProjectsPage'}" :scrollOptions="scrollOptions">   Projects </anchor-router-link>
+      <anchor-router-link class="NavbarLink"  id="ContactLink"  :to="{name: 'ContactPage', hash: '#ContactPage'}" :scrollOptions="scrollOptions"  >   Contact  </anchor-router-link>
     </div>
     <Home     id="HomePage"    ></Home>
     <About    id="AboutPage"   ></About>
@@ -33,6 +33,18 @@ export default {
   name: 'App',
   data(){
     return{
+      scrollOptions: {
+        container: "body",
+        duration: 700,
+        easing: "ease",
+        offset: 0,
+        cancelable: true,
+        onStart: false,
+        onDone: false,
+        onCancel: false,
+        x: false,
+        y: true
+      }
     }
   }
  
