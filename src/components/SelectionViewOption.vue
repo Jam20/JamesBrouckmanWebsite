@@ -1,7 +1,7 @@
 <template>
-    <div id="selectionViewOption" :style="{ backgroundcolor: color}">
+    <div id="selectionViewOption" :style="{ backgroundColor: color}">
         <h3> {{title}} </h3>
-        <img :src="require('../assets/' + imageURL + '.jpg')">
+        <img :src="imageURL">
     </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
         color: {
             type: String,
             default: "#ffffff"
+        }
     },
     computed: {
         
@@ -25,9 +26,7 @@ export default {
 
 #selectionViewOption{
     position: relative;
-    left: 0%;
-    background-color: red;
-    
+    left: 0%; 
     height: 10vh;
 }
 #selectionViewOption img{
@@ -47,7 +46,9 @@ export default {
     font-family: 'Titillium Web', sans-serif;
     top: 2vh;
     color: white;
-    left: 25%;
+    left: 20%;
+    width: 20%;
+    text-align: center;
     font-size:4vh;
     margin-top: 0;
     z-index: 1;
@@ -60,8 +61,8 @@ export default {
 #selectionViewOption:hover h3{
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
-    -webkit-transition: all .5s ease-out;
-    transition: all .5s ease-out;
+    -webkit-transition: all .6s ease-out;
+    transition: all .6s ease-out;
 }
 #selectionViewOption:hover img{
     opacity: 60%;

@@ -6,7 +6,9 @@
                 <h2>Skills</h2>
                  
             </div> 
-            <SelectionViewOption title="Test" imageURL="codeBackground"/>
+            <SelectionView :SelectorData="skillData">
+                <p> this is a test </p>     
+            </SelectionView>
         </div>
         
         <div id="ExperienceSection">
@@ -29,9 +31,19 @@
 </template>
 <script>
 import SelectionViewOption from "../components/SelectionViewOption"
+import SelectionView from "../components/SelectionView"
 
 export default {
+
+    data:function(){ return{
+        skillData: [
+            {title: "Programming", imageURL: require("../assets/CodeBackground.jpg"), color: "black"},
+            {title: "Electrical", imageURL: require("../assets/TestBackground.jpg"), color: "blue"}
+            ]
+    }},
+
     components: {
+        SelectionView,
         SelectionViewOption
     }
 }
@@ -50,10 +62,14 @@ export default {
     .sectionTitle{
         position: relative;
         top:5%;
-        left: 42vw;
+        left: 0%;
     }
     .sectionTitle h2{
+        position: relative;
         font-size: 3vw;
+        text-align: center;
+        width: 20%;
+        left: 40%;
         color: black;
     }
     #SkillsSection{

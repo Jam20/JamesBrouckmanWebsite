@@ -56,7 +56,7 @@ export default {
 @import url("Variables.css");
 
 body{
-  background-color: #d8d8d8; /*#3a3b3a;*/
+  background-color: #ffffff; /*#3a3b3a;*/
   margin:0 !important;
   font-family: 'Titillium Web', sans-serif;
 }
