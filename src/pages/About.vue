@@ -6,9 +6,8 @@
                 <h2>Skills</h2>
                  
             </div> 
-            <SelectionView :SelectorData="skillData">
-                <p> this is a test </p>     
-            </SelectionView>
+            <SelectionView :SelectorData="skillData" :SelectionOptionData ="skillContent"/>   
+
         </div>
         
         <div id="ExperienceSection">
@@ -39,7 +38,12 @@ export default {
         skillData: [
             {title: "Programming", imageURL: require("../assets/CodeBackground.jpg"), color: "black"},
             {title: "Electrical", imageURL: require("../assets/TestBackground.jpg"), color: "blue"}
-            ]
+            ],
+        skillContent: [
+            {imageURL: require("../assets/CodeBackground.jpg")},
+            {imageURL: require("../assets/TestBackground.jpg")}
+            
+        ]
     }},
 
     components: {

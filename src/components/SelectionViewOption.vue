@@ -1,7 +1,7 @@
 <template>
     <div id="selectionViewOption" :style="{ backgroundColor: color}">
         <h3> {{title}} </h3>
-        <img :src="imageURL">
+        <img :src="imageURL"/>
     </div>
 </template>
 
@@ -9,16 +9,16 @@
 export default {
     props: {
 
-        imageURL: String,
+        imageURL: {
+            type: String,
+            default: ""
+        },
         title: String,
         color: {
             type: String,
             default: "#ffffff"
         }
     },
-    computed: {
-        
-    }
 }
 </script>
 
