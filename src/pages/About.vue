@@ -37,12 +37,13 @@ export default {
     data:function(){ return{
         skillData: [
             {title: "Programming", imageURL: require("../assets/CodeBackground.jpg"), color: "black"},
-            {title: "Electrical", imageURL: require("../assets/TestBackground.jpg"), color: "blue"}
+            {title: "Electrical", imageURL: require("../assets/TestBackground.jpg"), color: "blue"},
+            {title: "OtherSkill", imageURL: require("../assets/BackgroundTwo.jpg"), color: "green"}
             ],
         skillContent: [
             {imageURL: require("../assets/CodeBackground.jpg")},
-            {imageURL: require("../assets/TestBackground.jpg")}
-            
+            {imageURL: require("../assets/TestBackground.jpg")},
+            {imageURL: require("../assets/BackgroundTwo.jpg")}
         ]
     }},
 

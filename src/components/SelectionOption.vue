@@ -1,7 +1,7 @@
 <template>
     <div id="SelectionOption">
         <img :src="imageURL"/>
-        <div class="arrow arrow-left"/>
+        <div class="arrow arrow-left" @mouseenter="emitEvent('backBtnEnter')" @mouseleave="emitEvent('backBtnLeave')" @click="emitEvent('backBtnClick')"/>
     </div>
 </template>
 
@@ -13,7 +13,14 @@ export default {
             type: String,
             default: ""
         },
+    },
+
+    methods:{
+        emitEvent: function(eventName){
+            this.$emit(eventName)
+        }
     }
+
 }
 </script>
 
@@ -49,8 +56,5 @@ export default {
           box-shadow: 2px -2px 0 2px white inset;
   -webkit-box-shadow: 4px -4px white inset;
 }
-
-
-
 
 </style>
