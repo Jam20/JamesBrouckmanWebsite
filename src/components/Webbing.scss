@@ -1,19 +1,35 @@
 @import "../variables.scss";
 
 .dot {
-    height: 10px;
-    width: 10px;
-    background-color: $primary-color-light;
-    border-radius: 50%;
-    display: inline-block;
-    position: absolute;
-  }
+  height: 0.5vw;
+  width: 0.5vw;
+  background-color: $primary-color-light;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+}
 
-.line {
-    height: 10px;
-    width: 10px;
-    background-color: $primary-color-light;
-    border-radius: 50%;
-    display: inline-block;
-    position: absolute;
-  }
+.linelr {
+  background: linear-gradient(
+    to top right,
+    $primary-color calc(50% - 1px),
+    $primary-color-light,
+    $primary-color calc(50% + 1px)
+  );
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+}
+
+.linerl {
+  background: linear-gradient(
+    to top left,
+    $primary-color calc(50% - 1px),
+    $primary-color-light,
+    $primary-color calc(50% + 1px)
+  );
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+}
