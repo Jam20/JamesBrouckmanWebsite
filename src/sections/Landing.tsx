@@ -51,7 +51,7 @@ export default class Landing extends Component {
                 attract: {
                   distance: 200,
                   duration: 0.1,
-                  speed: 3,
+                  speed: 1,
                 },
               },
             },
