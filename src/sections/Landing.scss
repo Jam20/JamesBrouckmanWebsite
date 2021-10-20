@@ -7,13 +7,11 @@
   padding: 0;
   background-color: $primary-color-dark;
   justify-content: center;
-  display: flex;
 }
 
-#tsparticles {
-  position: absolute;
-}
 h1 {
+  position: relative;
+  top: 33vh;
   z-index: 2;
   margin: 0 auto;
   color: white;
@@ -21,14 +19,33 @@ h1 {
   max-width: max-content;
   height: max-content;
   text-align: center;
-  margin-top: 33vh;
   font-size: 5vw;
   font-weight: 400;
   font-family: "Roboto";
   overflow: hidden;
-  border-right: 0.5vw solid $secondary-color;
+  border-right: 0.5vw solid transparent;
   white-space: nowrap;
-  animation: type 3.5s steps(60, end), blink 0.75s step-end infinite;
+  animation: type 4.5s steps(120, end), blink 0.5s step-end 4.5;
+}
+
+h2 {
+  position: relative;
+  top: 35vh;
+  z-index: 2;
+  margin: 0 auto;
+  color: white;
+  width: max-content;
+  max-width: max-content;
+  height: max-content;
+  text-align: center;
+  font-size: 1vw;
+  font-weight: 400;
+  font-family: "Roboto";
+  overflow: hidden;
+  border-right: 0.25vw solid transparent;
+  white-space: nowrap;
+  animation: delayed_type 9s steps(150, end), blink 0.75s step-end infinite;
+  animation-delay: 0s, 1.5s;
 }
 
 @keyframes type {
@@ -40,8 +57,26 @@ h1 {
   }
 }
 
+@keyframes delayed_type {
+  from {
+    width: 0;
+  }
+  22% {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes blink {
+  0% {
+    border-color: transparent;
+  }
   50% {
+    border-color: $secondary-color;
+  }
+  100% {
     border-color: transparent;
   }
 }
