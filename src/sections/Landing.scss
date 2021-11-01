@@ -5,11 +5,11 @@
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: $primary-color-dark;
+  background-color: $primary-color;
   justify-content: center;
 }
 
-h1 {
+#LandingPrimaryHeading {
   position: relative;
   top: 33vh;
   z-index: 2;
@@ -17,7 +17,7 @@ h1 {
   color: white;
   width: max-content;
   max-width: max-content;
-  height: max-content;
+  height: 15vh;
   text-align: center;
   font-size: 5vw;
   font-weight: 400;
@@ -28,7 +28,7 @@ h1 {
   animation: type 4.5s steps(120, end), blink 0.5s step-end 4.5;
 }
 
-h2 {
+#LandingSecondaryHeading {
   position: relative;
   top: 35vh;
   z-index: 2;

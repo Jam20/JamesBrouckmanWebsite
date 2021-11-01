@@ -11,9 +11,10 @@ export default class Landing extends Component {
     return (
       <Box id="boxContainer">
         <Webbing />
-
-        <h1>James Brouckman</h1>
-        <h2>An embedded developer for the modern age</h2>
+        <h1 id="LandingPrimaryHeading">James Brouckman</h1>
+        <h2 id="LandingSecondaryHeading">
+          An embedded developer for the modern age
+        </h2>
       </Box>
     );
   }
