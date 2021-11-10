@@ -14,7 +14,9 @@ export default class LogoCard extends Component<props,{}> {
         return (
             <Card id = {this.props.id} className="LogoCard">
                 <img src={this.props.imgURL}/>
-                {this.props.children}
+                <div className="LogoChildren">
+                    {this.props.children}
+                </div>
             </Card>
         )
     }
