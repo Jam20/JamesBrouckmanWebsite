@@ -1,0 +1,18 @@
+@import "../variables.scss";
+
+.LogoCard{
+
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 5vw;
+    background-color: $primary-color;
+}
+img {
+    width: 10%;
+    min-width: 5vw;
+    height: 100%;
+    margin-right: 5%;
+    background-color: $primary-color-light;
+    border-radius: 3%;
+}

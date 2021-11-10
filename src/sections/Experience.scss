@@ -1,0 +1,25 @@
+@import "../variables.scss";
+
+#ExperienceTitle{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2vw;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Roboto";
+    color: white;
+    margin: 0;
+    padding-top: 1%;
+}
+#ExperienceBox{
+    background-color: $primary-color-dark;
+    width: 100%;
+    height: 50vh;
+}
+
+#MilwaukeeTool{
+    position: relative;
+    top: 30%;
+    left: 17.5%;
+}
