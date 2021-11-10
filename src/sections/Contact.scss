@@ -1,0 +1,31 @@
+@import "../variables.scss";
+
+#ContactSection{
+    background-color: $primary-color-dark;
+    display: flex;
+    flex-direction: column;
+}
+.IconSection{
+    position: relative;
+    left: 43.74%;
+    width: 10%;
+    margin-bottom: .5%;
+    margin-top: 1%;
+}
+
+
+
+#email{
+    margin-bottom: .1%;
+}
+
+#phone{
+    margin-bottom: 1%;
+}
+a{
+    margin: 0;
+    position: relative;
+    width: 33%;
+    left:33%;
+    text-align: center;
+}
